@@ -1,0 +1,48 @@
+.add-blog-form {
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+  }
+  
+  .add-blog-form .container {
+    border: 3px solid
+      linear-gradient(
+        90deg,
+        rgba(58, 75, 180, 1) 2%,
+        rgba(116, 49, 110, 1) 36%,
+        rgba(2, 0, 161, 1) 73%,
+        rgba(69, 92, 252, 1) 100%
+      );
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px #ccc;
+    padding: 2rem;
+  }
+  
+  .add-blog-form .container h2 {
+    font-weight: bold;
+    color: grey;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+  
+  .add-blog-form .container .form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 24px;
+  }
+  
+  .add-blog-form .container .form-group input,
+  .add-blog-form .container .form-group textarea {
+    font-size: 24px;
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .add-blog-form .container button {
+    margin-top: 2rem;
+    border-radius: 4px;
+  }
