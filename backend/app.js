@@ -10,15 +10,15 @@ app.use(express.json());
 app.use('/api/user', router);
 app.use('/api/blog', blogRouter);
 
+const PORT = process.env.PORT || 5000;
 const mongoURI = 'mongodb+srv://agamjot_singh:5hmBcj28K90D3K6u@cluster0.trhpj0r.mongodb.net/BlogWebapp';
-
 mongoose
   .connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(5000, () => {
+    app.listen(PORT, () => {
       console.log('Connected to database. Listening on localhost:5000');
     });
   })

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./styles/Blog.css"; // Your custom CSS file
+import "font-awesome/css/font-awesome.css"; 
 
 const Blog = ({ title, description, imageURL, userName, isUser, id }) => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Blog = ({ title, description, imageURL, userName, isUser, id }) => {
 
   const deleteRequest = async () => {
     const res = await axios
-      .delete(`http://localhost:5000/api/blog/${id}`)
+      .delete(`https://blog-webapp-uohy.onrender.com/api/blog/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

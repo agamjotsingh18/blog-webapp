@@ -23,7 +23,7 @@ const Header = () => {
       position="sticky"
       sx={{
         background:
-          "linear-gradient(90deg, rgba(58,75,180,1) 2%, rgba(116,49,110,1) 36%, rgba(2,0,161,1) 73%, rgba(69,92,252,1) 100%)",
+          "linear-gradient(135deg, #E2B0FF, #9F44D3)",
       }}
     >
       <Toolbar>
@@ -66,7 +66,7 @@ const Header = () => {
                 LinkComponent={Link}
                 to="/auth"
                 variant="contained"
-                sx={{ margin: 1, borderRadius: 10 }}
+                sx={{ margin: 1, borderRadius: 10, backgroundColor: '#F6D0FE', color: "black" }}
                 color="warning"
               >
                 Login
@@ -75,7 +75,7 @@ const Header = () => {
                 LinkComponent={Link}
                 to="/auth"
                 variant="contained"
-                sx={{ margin: 1, borderRadius: 10 }}
+                sx={{ margin: 1, borderRadius: 10,backgroundColor: '#F6D0FE', color: "black" }}
                 color="warning"
               >
                 Signup
@@ -88,7 +88,7 @@ const Header = () => {
               LinkComponent={Link}
               to="/auth"
               variant="contained"
-              sx={{ margin: 1, borderRadius: 10 }}
+              sx={{ margin: 1, borderRadius: 10 , backgroundColor: '#F6D0FE', color: "black"}}
               color="warning"
             >
               Logout
