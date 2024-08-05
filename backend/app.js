@@ -11,7 +11,7 @@ app.use('/api/user', router);
 app.use('/api/blog', blogRouter);
 
 const PORT = process.env.PORT || 5000;
-const mongoURI = 'mongodb+srv://agamjot_singh:5hmBcj28K90D3K6u@cluster0.trhpj0r.mongodb.net/BlogWebapp';
+const mongoURI = process.env.mongoURI;
 mongoose
   .connect(mongoURI, {
     useNewUrlParser: true,
