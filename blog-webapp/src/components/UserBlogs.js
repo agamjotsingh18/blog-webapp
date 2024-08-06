@@ -9,7 +9,7 @@ const UserBlogs = () => {
   const sendRequest = async () => {
     try {
       const response = await axios.get(
-        `https://blog-webapp-uohy.onrender.com/api/blog/user/${id}`
+        `https://blog-webapp-r9hs.onrender.com/api/blog/user/${id}`
       );
       setUser(response.data.user);
     } catch (error) {

@@ -33,7 +33,7 @@ const Auth = () => {
 
   const sendRequest = async (type) => {
     try {
-      const res = await axios.post(`https://blog-webapp-uohy.onrender.com/api/user/${type}`, {
+      const res = await axios.post(`https://blog-webapp-r9hs.onrender.com/api/user/${type}`, {
         name: inputs.name,
         email: inputs.email,
         password: inputs.password,

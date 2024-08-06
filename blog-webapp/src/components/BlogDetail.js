@@ -21,7 +21,7 @@ const BlogDetail = () => {
 
   const fetchDetails = async () => {
     try {
-      const response = await axios.get(`https://blog-webapp-uohy.onrender.com/api/blog/${id}`);
+      const response = await axios.get(`https://blog-webapp-r9hs.onrender.com/api/blog/${id}`);
       setBlog(response.data.blog);
       setInputs({
         title: response.data.blog.title,
@@ -38,7 +38,7 @@ const BlogDetail = () => {
 
   const sendRequest = async () => {
     try {
-      await axios.put(`https://blog-webapp-uohy.onrender.com/api/blog/update/${id}`, {
+      await axios.put(`https://blog-webapp-r9hs.onrender.com/api/blog/update/${id}`, {
         title: inputs.title,
         description: inputs.description,
       });
