@@ -72,4 +72,4 @@ To run this project locally, follow these steps:
 ## Project Structure
 
 - `backend/`: Contains the backend code (API, database models, controllers, routes)
-- `blog-webapp//`: Contains the frontend code (React components, Redux store, CSS)
+- `blog-webapp/`: Contains the frontend code (React components, Redux store, CSS)
