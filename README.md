@@ -1,6 +1,6 @@
-# Blog WebApp
+# Blog With Me
 
-Welcome to Blog WebApp, a full-featured blogging platform where users can create, edit, and view blog posts. This application is built using the MERN (MongoDB, Express, React, Node.js) stack.
+Welcome to Blog With Me, a full-featured blogging platform where users can create, edit, and view blog posts. This application is built using the MERN (MongoDB, Express, React, Node.js) stack.
 
 ## Features
 
