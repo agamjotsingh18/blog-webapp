@@ -28,7 +28,7 @@ const Header = () => {
     >
       <Toolbar>
         <Typography className={classes.font} variant="h4">
-          Blogs WebApp
+          Blog With Me
         </Typography>
         {isLoggedIn && (
           <Box display="flex" marginLeft={"auto"} marginRight="auto">
