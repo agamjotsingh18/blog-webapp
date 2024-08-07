@@ -1,0 +1,25 @@
+.home-page {
+    background-image: url('https://source.unsplash.com/random/1920x1080');
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+  }
+  
+  .home-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.home-page p {
+      text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .home-page .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  

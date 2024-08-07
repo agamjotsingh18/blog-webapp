@@ -6,7 +6,7 @@ import { Container, Form, Button } from "react-bootstrap";
 import "./styles/Auth.css";
 import axios from "axios";
 
-const Auth = () => {
+const Auth = ({ isSignup }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
@@ -15,7 +15,7 @@ const Auth = () => {
     password: "",
   });
 
-  const [isSignup, setIsSignup] = useState(false);
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -24,15 +24,14 @@ const Auth = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(inputs);
-    const type = isSignup ? "signup" : "login";
-    sendRequest(type);
-  };
+    if (isFormSubmitting) return; // Prevent double submission
 
-  const sendRequest = async (type) => {
+    setIsFormSubmitting(true); // Set loading state
+
     try {
+      const type = isSignup ? "signup" : "login";
       const res = await axios.post(`https://blog-webapp-r9hs.onrender.com/api/user/${type}`, {
         name: inputs.name,
         email: inputs.email,
@@ -40,13 +39,13 @@ const Auth = () => {
       });
 
       const data = res.data;
-      console.log(data);
-
       localStorage.setItem("userId", data.user._id);
       dispatch(authActions.login());
       navigate("/blogs");
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsFormSubmitting(false); // Reset loading state
     }
   };
 
@@ -87,12 +86,12 @@ const Auth = () => {
               required
             />
           </Form.Group>
-          <Button type="submit" variant="warning" block>
-            Submit
+          <Button type="submit" variant="warning" block disabled={isFormSubmitting}>
+            {isFormSubmitting ? "Submitting..." : "Submit"}
           </Button>
           <Button
             type="button"
-            onClick={() => setIsSignup(!isSignup)}
+            onClick={() => navigate(isSignup ? "/login" : "/signup")}
             variant="link"
             className="mt-3"
           >

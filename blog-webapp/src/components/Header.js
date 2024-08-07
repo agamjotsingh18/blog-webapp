@@ -12,9 +12,10 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store";
 import { useStyles } from "./utils";
+
 const Header = () => {
   const classes = useStyles();
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
 
   const [value, setValue] = useState();
@@ -39,19 +40,19 @@ const Header = () => {
             >
               <Tab
                 className={classes.font}
-                LinkComponent={Link}
+                component={Link}
                 to="/blogs"
                 label="All Blogs"
               />
               <Tab
                 className={classes.font}
-                LinkComponent={Link}
+                component={Link}
                 to="/myBlogs"
                 label="My Blogs"
               />
               <Tab
                 className={classes.font}
-                LinkComponent={Link}
+                component={Link}
                 to="/blogs/add"
                 label="Add Blog"
               />
@@ -61,10 +62,9 @@ const Header = () => {
         <Box display="flex" marginLeft="auto">
           {!isLoggedIn && (
             <>
-              {" "}
               <Button
-                LinkComponent={Link}
-                to="/auth"
+                component={Link}
+                to="/login"
                 variant="contained"
                 sx={{ margin: 1, borderRadius: 10, backgroundColor: '#F6D0FE', color: "black" }}
                 color="warning"
@@ -72,10 +72,10 @@ const Header = () => {
                 Login
               </Button>
               <Button
-                LinkComponent={Link}
-                to="/auth"
+                component={Link}
+                to="/signup"
                 variant="contained"
-                sx={{ margin: 1, borderRadius: 10,backgroundColor: '#F6D0FE', color: "black" }}
+                sx={{ margin: 1, borderRadius: 10, backgroundColor: '#F6D0FE', color: "black" }}
                 color="warning"
               >
                 Signup
@@ -84,11 +84,11 @@ const Header = () => {
           )}
           {isLoggedIn && (
             <Button
-              onClick={() => dispath(authActions.logout())}
-              LinkComponent={Link}
-              to="/auth"
+              onClick={() => dispatch(authActions.logout())}
+              component={Link}
+              to="/"
               variant="contained"
-              sx={{ margin: 1, borderRadius: 10 , backgroundColor: '#F6D0FE', color: "black"}}
+              sx={{ margin: 1, borderRadius: 10, backgroundColor: '#F6D0FE', color: "black" }}
               color="warning"
             >
               Logout
